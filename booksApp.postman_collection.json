@@ -1,0 +1,488 @@
+{
+  "info": {
+    "_postman_id": "51da289a-e7d3-46c6-8969-4c39fca112fa",
+    "name": "booksApp",
+    "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+    "_exporter_id": "51125287"
+  },
+  "item": [
+    {
+      "name": "book",
+      "item": [
+        {
+          "name": "create books collection",
+          "request": {
+            "method": "POST",
+            "header": [],
+            "body": {
+              "mode": "raw",
+              "raw": "{\r\n    \"postId\": \"1\",\r\n    \"userId\": \"2\",\r\n    \"content\": \"This is a sample comment.\"\r\n}"
+            },
+            "url": {
+              "raw": "{{baseUrl}}/collection/books",
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "path": [
+                "collection",
+                "books"
+              ]
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "create authors collection",
+          "request": {
+            "method": "POST",
+            "header": [],
+            "body": {
+              "mode": "raw",
+              "raw": "{\r\n   \"name\":\"Author1\",\r\n   \"nationality\":\"British\"\r\n}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            },
+            "url": {
+              "raw": "{{baseUrl}}/collection/authors",
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "path": [
+                "collection",
+                "authors"
+              ]
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "create logs collection",
+          "request": {
+            "method": "POST",
+            "header": [],
+            "body": {
+              "mode": "raw",
+              "raw": "{\r\n    \"postId\": \"1\",\r\n    \"userId\": \"2\",\r\n    \"content\": \"This is a sample comment.\"\r\n}"
+            },
+            "url": {
+              "raw": "{{baseUrl}}/collection/logs/capped",
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "path": [
+                "collection",
+                "logs",
+                "capped"
+              ]
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "create index",
+          "request": {
+            "method": "POST",
+            "header": [],
+            "body": {
+              "mode": "raw",
+              "raw": "{\r\n    \"postId\": \"1\",\r\n    \"userId\": \"2\",\r\n    \"content\": \"This is a sample comment.\"\r\n}"
+            },
+            "url": {
+              "raw": "{{baseUrl}}/collection/books/index",
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "path": [
+                "collection",
+                "books",
+                "index"
+              ]
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "insert book",
+          "request": {
+            "method": "POST",
+            "header": [],
+            "body": {
+              "mode": "raw",
+              "raw": "{\r\n   \"title\": \"Book1\",\r\n    \"author\": \"Ali\",\r\n    \"year\": 1937,\r\n    \"genres\": [\"Fantasy\", \"Adventure\"]\r\n}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            },
+            "url": {
+              "raw": "{{baseUrl}}/books",
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "path": [
+                "books"
+              ]
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "insert books",
+          "request": {
+            "method": "POST",
+            "header": [],
+            "body": {
+              "mode": "raw",
+              "raw": "[\r\n   { \"title\": \"Future\", \"author\": \"George Orwell\", \"year\": 2028, \"genres\": [\"Science Fiction\"] },\r\n    { \"title\": \"To Kill a Mockingbird\", \"author\": \"Harper Lee\",    \"year\": 1968, \"genres\": [\"Classic\", \"Fiction\"] },\r\n    { \"title\": \"Brave New World\",       \"author\": \"Aldous Huxley\", \"year\": 2006, \"genres\": [\"Dystopian\", \"Science Fiction\"] }\r\n]",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            },
+            "url": {
+              "raw": "{{baseUrl}}/books/batch",
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "path": [
+                "books",
+                "batch"
+              ]
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "insert log",
+          "request": {
+            "method": "POST",
+            "header": [],
+            "body": {
+              "mode": "raw",
+              "raw": "{\r\n   \"book_id\":\"69a17bd21b8571c8495b6887\" ,\r\n    \"action\":\"borrowed\"\r\n}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            },
+            "url": {
+              "raw": "{{baseUrl}}/logs",
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "path": [
+                "logs"
+              ]
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "update book",
+          "request": {
+            "method": "PATCH",
+            "header": [],
+            "body": {
+              "mode": "raw",
+              "raw": "{\r\n   \"title\": \"Book1\",\r\n    \"author\": \"Ali\",\r\n    \"year\": 1937,\r\n    \"genres\": [\"Fantasy\", \"Adventure\"]\r\n}"
+            },
+            "url": {
+              "raw": "{{baseUrl}}/books/future",
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "path": [
+                "books",
+                "future"
+              ]
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "find book by title",
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          },
+          "request": {
+            "method": "GET",
+            "header": [],
+            "body": {
+              "mode": "raw",
+              "raw": "[\r\n   { \"title\": \"Future\", \"author\": \"George Orwell\", \"year\": 2028, \"genres\": [\"Science Fiction\"] },\r\n    { \"title\": \"To Kill a Mockingbird\", \"author\": \"Harper Lee\",    \"year\": 1968, \"genres\": [\"Classic\", \"Fiction\"] },\r\n    { \"title\": \"Brave New World\",       \"author\": \"Aldous Huxley\", \"year\": 2006, \"genres\": [\"Dystopian\", \"Science Fiction\"] }\r\n]"
+            },
+            "url": {
+              "raw": "{{baseUrl}}/books/title?title=Brave New World",
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "path": [
+                "books",
+                "title"
+              ],
+              "query": [
+                {
+                  "key": "title",
+                  "value": "Brave New World",
+                  "type": "text"
+                }
+              ]
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "find book by year",
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          },
+          "request": {
+            "method": "GET",
+            "header": [],
+            "body": {
+              "mode": "raw",
+              "raw": "{\r\n   \"title\": \"Book1\",\r\n    \"author\": \"Ali\",\r\n    \"year\": 1937,\r\n    \"genres\": [\"Fantasy\", \"Adventure\"]\r\n}"
+            },
+            "url": {
+              "raw": "{{baseUrl}}/books/year?from=1990&to=2010",
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "path": [
+                "books",
+                "year"
+              ],
+              "query": [
+                {
+                  "key": "from",
+                  "value": "1990"
+                },
+                {
+                  "key": "to",
+                  "value": "2010"
+                }
+              ]
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "find book by genre",
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          },
+          "request": {
+            "method": "GET",
+            "header": [],
+            "body": {
+              "mode": "raw",
+              "raw": "{\r\n   \"title\": \"Book1\",\r\n    \"author\": \"Ali\",\r\n    \"year\": 1937,\r\n    \"genres\": [\"Fantasy\", \"Adventure\"]\r\n}"
+            },
+            "url": {
+              "raw": "{{baseUrl}}/books/genre?genre=Science Fiction",
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "path": [
+                "books",
+                "genre"
+              ],
+              "query": [
+                {
+                  "key": "genre",
+                  "value": "Science Fiction",
+                  "type": "text"
+                }
+              ]
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "books pagination",
+          "request": {
+            "method": "GET",
+            "header": [],
+            "url": {
+              "raw": "{{baseUrl}}/books/skip-limit",
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "path": [
+                "books",
+                "skip-limit"
+              ]
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "books if year int",
+          "request": {
+            "method": "GET",
+            "header": [],
+            "url": {
+              "raw": "{{baseUrl}}/books/year-integer",
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "path": [
+                "books",
+                "year-integer"
+              ]
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "exclude genres",
+          "request": {
+            "method": "GET",
+            "header": [],
+            "url": {
+              "raw": "{{baseUrl}}/books/exclude-genres",
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "path": [
+                "books",
+                "exclude-genres"
+              ]
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "delete books by year",
+          "request": {
+            "method": "DELETE",
+            "header": [],
+            "url": {
+              "raw": "{{baseUrl}}/books/before-year?year=2022",
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "path": [
+                "books",
+                "before-year"
+              ],
+              "query": [
+                {
+                  "key": "year",
+                  "value": "2022"
+                }
+              ]
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "break down genres",
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          },
+          "request": {
+            "method": "GET",
+            "header": [],
+            "body": {
+              "mode": "raw",
+              "raw": "[\r\n   { \"title\": \"Future\", \"author\": \"George Orwell\", \"year\": 2028, \"genres\": [\"Science Fiction\"] },\r\n    { \"title\": \"To Kill a Mockingbird\", \"author\": \"Harper Lee\",    \"year\": 1968, \"genres\": [\"Classic\", \"Fiction\"] },\r\n    { \"title\": \"Brave New World\",       \"author\": \"Aldous Huxley\", \"year\": 2006, \"genres\": [\"Dystopian\", \"Science Fiction\"] }\r\n]"
+            },
+            "url": {
+              "raw": "{{baseUrl}}/books/aggregate3",
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "path": [
+                "books",
+                "aggregate3"
+              ]
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "join collections",
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          },
+          "request": {
+            "method": "GET",
+            "header": [],
+            "body": {
+              "mode": "raw",
+              "raw": "[\r\n   { \"title\": \"Future\", \"author\": \"George Orwell\", \"year\": 2028, \"genres\": [\"Science Fiction\"] },\r\n    { \"title\": \"To Kill a Mockingbird\", \"author\": \"Harper Lee\",    \"year\": 1968, \"genres\": [\"Classic\", \"Fiction\"] },\r\n    { \"title\": \"Brave New World\",       \"author\": \"Aldous Huxley\", \"year\": 2006, \"genres\": [\"Dystopian\", \"Science Fiction\"] }\r\n]"
+            },
+            "url": {
+              "raw": "{{baseUrl}}/books/aggregate4",
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "path": [
+                "books",
+                "aggregate4"
+              ]
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "get books with some fields",
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          },
+          "request": {
+            "method": "GET",
+            "header": [],
+            "body": {
+              "mode": "raw",
+              "raw": "[\r\n   { \"title\": \"Future\", \"author\": \"George Orwell\", \"year\": 2028, \"genres\": [\"Science Fiction\"] },\r\n    { \"title\": \"To Kill a Mockingbird\", \"author\": \"Harper Lee\",    \"year\": 1968, \"genres\": [\"Classic\", \"Fiction\"] },\r\n    { \"title\": \"Brave New World\",       \"author\": \"Aldous Huxley\", \"year\": 2006, \"genres\": [\"Dystopian\", \"Science Fiction\"] }\r\n]"
+            },
+            "url": {
+              "raw": "{{baseUrl}}/books/aggregate2",
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "path": [
+                "books",
+                "aggregate2"
+              ]
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "filter books",
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          },
+          "request": {
+            "method": "GET",
+            "header": [],
+            "body": {
+              "mode": "raw",
+              "raw": "[\r\n   { \"title\": \"Future\", \"author\": \"George Orwell\", \"year\": 2028, \"genres\": [\"Science Fiction\"] },\r\n    { \"title\": \"To Kill a Mockingbird\", \"author\": \"Harper Lee\",    \"year\": 1968, \"genres\": [\"Classic\", \"Fiction\"] },\r\n    { \"title\": \"Brave New World\",       \"author\": \"Aldous Huxley\", \"year\": 2006, \"genres\": [\"Dystopian\", \"Science Fiction\"] }\r\n]"
+            },
+            "url": {
+              "raw": "{{baseUrl}}/books/aggregate1",
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "path": [
+                "books",
+                "aggregate1"
+              ]
+            }
+          },
+          "response": []
+        }
+      ]
+    }
+  ]
+}
